@@ -10,9 +10,9 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 
 
-const accountData = fs.readFileSync(path.join(__dirname, 'json', 'accounts.json', 'utf-8'))
+const accountData = fs.readFileSync(path.join(__dirname, 'json', 'accounts.json'))
 const accounts = JSON.parse(accountData);
-const userData = fs.readFileSync(path.join(__dirname, 'json', 'users.json', 'utf-8'))
+const userData = fs.readFileSync(path.join(__dirname, 'json', 'users.json'))
 const users = JSON.parse(userData);
 app.get('/', (req, res) => res.render('index', { title: 'Account Summary' }, accounts));
 
